@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+    <!-- JavaScript Bundle with Popper -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
+    <title>Calculator</title>
+    <style>
+       *{
+            margin:0;
+            padding:0;
+            box-sizing: border-box;
+        }
+        .parent_div{
+            width: 100vw;
+            height: 100vh;
+            background-image: "img3.jpg";
+            position: relative;
+        }
+        .child_div{
+            width: 40vw;
+            height: 55vh;
+            background: white;
+            position: absolute;
+            left: 20%;
+            top: 60%;
+            transform: translate(-25%, -55%);
+            border-radius: 25px;
+        }
+        .setbtn
+        {
+            height: 3.3vw;
+            width:12vw;
+        }
+        .setitext
+        {
+            height: 3.3vw;
+            width:25vw;
+        }
+    </style>
+    <script>
+        
+    
+        function printData() {
+           var  y = document.getElementById('idTextOne').value;
+          document.getElementById("idAnswer").innerHTML="<span style='color:red'>"+ y +"<span/>";
+        }
+
+        function add(){
+            var a=document.getElementById('fValue').value;
+            var b=document.getElementById('lValue').value;
+            var c=parseInt(a)+ parseInt(b);
+            document.getElementById('idAdd').value="Addition is : "+c;
+        }
+        function sub(){
+            var a=document.getElementById('fValue').value;
+            var b=document.getElementById('lValue').value;
+            var c=parseInt(a)- parseInt(b);
+            document.getElementById('idAdd').value="Subtraction : "+c;
+        }
+        function mul(){
+            var a=document.getElementById('fValue').value;
+            var b=document.getElementById('lValue').value;
+            var c=parseInt(a)* parseInt(b);
+            document.getElementById('idAdd').value="Multiplication is : "+c;
+        }
+        function div(){
+            var a=document.getElementById('fValue').value;
+            var b=document.getElementById('lValue').value;
+            var c=parseInt(a)/ parseInt(b);
+            document.getElementById('idAdd').value="Division is : "+c;
+        }
+    </script>
+    
+
+</head>
+
+<body style="background-image: url('img8.jpg');">
+   
+    <div class="parent_div">
+        <br><br><br><br>
+        <p style = "font-family:georgia,garamond,serif;font-size:80px;font-style:Bold;color: white; ">
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  Calculator
+         </p>
+    <div class="child_div">
+    
+    <center>
+ 
+    
+    <tr style="background-color:white">
+    <br><br><input class="btn btn-outline-primary setitext" type="text" id="fValue"/><br>    <br>
+    <input class="btn btn-outline-primary setitext" type="text" id="lValue"/><br><br>
+
+            
+    <input class="btn btn-info setbtn" type="button" value="Add" ondblclick="add()"/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <input class="btn btn-info setbtn" type="button" value="Sub" ondblclick="sub()"/><br><br>
+    <input class="btn btn-info setbtn" type="button" value="Mul" ondblclick="mul()"/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <input class="btn btn-info setbtn" type="button" value="Div " ondblclick="div()"/><br>
+    <br>
+    <input class="btn btn-outline-primary setitext" type="text" id="idAdd" disabled readonly/>
+   
+</center>
+  
+</div>
+</div>
+</body>
+
+</html>
